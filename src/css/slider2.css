@@ -1,0 +1,192 @@
+@import url("https://use.fontawesome.com/releases/v5.0.8/css/all.css");
+
+body {
+    background-color:#f6f6f6;
+    /*margin:0;*/
+    /*padding:0;*/
+    font-family:Helvetica, sans-serif;
+}
+
+#slider {
+    width: 1000px;
+    overflow: hidden;
+}
+
+#container {
+    /*width: 4000px;*/
+    width: 100%;
+    height:500px;
+    position:relative;
+    /*overflow: hidden;*/
+
+}
+
+.Sliderbutton {
+    position: absolute;
+    top: 140px;
+    width:20px;
+    height:20px;
+    border:none;
+    font-size: 30px;
+    color:#FFF;
+    background: none;
+}
+button:hover {color:#00B2EE}
+button#left {left: 10%;}
+button#right {left: 90%;}
+
+
+.Sliderbutton button:visited, button:focus, button:active, button:hover{
+    outline:0 none !important;
+}
+
+.item {
+    /*width:1000px;*/
+    width:100%;
+    float:left;
+    background:#CCC;
+    height:500px;
+    transition: all 1s;
+    /*text-align:center;*/
+    color: #FFFFFF;
+    /*padding-top:80px;*/
+    position:absolute;
+}
+
+.item h1 {font-size:60px;margin-bottom: 10px;}
+.item p {font-size:20px;font-weight:lighter;}
+
+.item#slide0 {
+    background: linear-gradient(to right, rgb(21, 101, 192), rgb(79, 195, 247));
+
+    /*background: -webkit-linear-gradient(-35deg, #212121 0%, #212121 57%, #00B2EE 57%, #0091EA 100%);*/
+    /*background: #5aecfc;*/
+    /*background:-webkit-linear-gradient(top, #5aecfc 0, #59fcdb);*/
+    /*background:-o-linear-gradient(bottom, #5aecfc 0, #59fcdb);*/
+    /*background:-moz-linear-gradient(bottom, #5aecfc 0, #59fcdb);*/
+    /*background:linear-gradient(to bottom, #5aecfc 0, #59fcdb);*/
+}
+
+.item#slide1 {
+    /*background: -webkit-linear-gradient(-35deg, #0091EA 0%, #00B2EE 57%, #212121 57%, #212121 100%);*/
+    background: linear-gradient(to right, rgb(79, 195, 247), rgb(21, 101, 192))
+    /*background: #8a4ff7;*/
+    /*background:-webkit-linear-gradient(top, #8a4ff7 0, #251fa3);*/
+    /*background:-o-linear-gradient(bottom, #8a4ff7 0, #251fa3);*/
+    /*background:-moz-linear-gradient(bottom, #8a4ff7 0, #251fa3);*/
+    /*background:linear-gradient(to bottom, #8a4ff7 0, #251fa3);*/
+}
+
+.item#slide2 {
+    /*background: #fcd858;*/
+    /*background:-webkit-linear-gradient(top, #fcd858 0, #fc9928);*/
+    /*background:-o-linear-gradient(bottom, #fcd858 0, #fc9928);*/
+    /*background:-moz-linear-gradient(bottom, #fcd858 0, #fc9928);*/
+    /*background:linear-gradient(to bottom, #fcd858 0, #fc9928);*/
+}
+
+.item#slide3 {
+    /*background: #fc4e28;*/
+    /*background:-webkit-linear-gradient(top, #fc2828 0, #fc2859);*/
+    /*background:-o-linear-gradient(bottom, #fc2828 0, #fc2859);*/
+    /*background:-moz-linear-gradient(bottom, #fc2828 0, #fc2859);*/
+    /*background:linear-gradient(to bottom, #fc2828 0, #fc2859);*/
+}
+
+.level-1 {
+    left: -100%;
+    /*background: linear-gradient(to right, rgb(21, 101, 192), rgb(79, 195, 247))*/
+}
+.level0 {
+    left: 0px;
+
+}
+.level1 {
+    left: 100%;
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400i,700i|Montserrat:700i");
+
+
+.MySliderCont{
+    display:flex;
+    overflow: hidden;
+    width:100%;
+    margin: auto;
+    justify-content: center;
+
+    margin-top:1%;
+    margin-bottom: 1%;
+}
+
+.MySlide{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.SliderImage{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0;
+
+
+}
+
+.SliderFloatingText{
+    position: absolute;
+    float:left;
+    top: 20%;
+    margin-left: 13%;
+    max-width: 40%;
+    text-align: right;
+    z-index: 10;
+}
+
+.SliderBtn {
+    position: absolute;
+    top: 70%;
+    margin-left: 35%;
+    z-index: 10;
+}
+
+
+
+.SliderBtn .Btn {
+    color:white !important;
+    font-family: 'Yanone Kaffeesatz', sans-serif!important;
+    /*font-size: 28px!important;*/
+    /*font-weight: 700!important;*/
+
+    width: 200px;
+    height: 30px;
+}
+.SliderName{
+    font-size: 40px;
+    color: #FAFAFA;
+
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-shadow: 1px 1px 5px #9E9E9E;
+
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Cuprum:400i");
+.SliderDescription{
+
+
+    font-family: 'Cuprum', sans-serif;
+    font-size: 23px;
+    color: #f4f0ef;
+}
+
+
+/*$left: -1000px;*/
+/*$center: 0px;*/
+/*$right: 1000px;*/
+
+/*.level-1  {left: $left;}*/
+/*.level0 {left: $center;}*/
+/*.level1 {left: $right;}*/

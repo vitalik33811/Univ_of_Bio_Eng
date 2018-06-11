@@ -1,0 +1,10 @@
+.navigationbattons {
+
+    display: flex;
+    justify-content: space-around;
+
+}
+.ButtonConvert{
+    position: relative;
+    width: 15%;
+}

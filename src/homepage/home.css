@@ -1,0 +1,28 @@
+.CardHandler{
+    display: flex;
+    margin-right: 20%;
+    margin-left: 20%;
+
+}
+.TotalHome{
+    background-color: lightgrey;
+}
+#colorsid
+{
+    background: white!important;
+    color: black!important;
+}
+.iconclassname
+{
+    color: black!important;
+    fill: black!important;
+}
+.AppBarImg{
+    max-height: 80px;
+    max-width: 100px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+.Sliderconteiner{
+    overflow: hidden;
+    height: 400px;
+}

@@ -1,0 +1,35 @@
+.FooterCont{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #212121;
+}
+
+.fblock{
+    display:flex;
+    flex-direction:column;
+    position: relative;
+    width: 32%;
+    margin-left: 10%;
+    /*text-align: center;*/
+}
+
+.logoText{
+    font-family: 'Oswald';
+    font-size: 24px;
+    color: #0091EA;
+
+}
+
+.foovar{
+    color: #0091EA;
+    font-family: 'Oswald';
+    font-size: 20px;
+}
+
+.fooval{
+    font-family: 'Oswald';
+    font-size: 18px;
+    color: #f6f6f6;
+    margin-left: 2%;
+}
