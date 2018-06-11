@@ -129,7 +129,7 @@ class Slider extends React.Component {
             active:index,
             direction: 'right'
         });
-        //if(user == 0){this.StartStop(1);}
+      
     }
 
     setActive(){
@@ -138,17 +138,13 @@ class Slider extends React.Component {
 
     Stop() {
         clearTimeout(this.state.gi);
-        //this.state.gi = setInterval(function() { this.setActive() }.bind(this), 5000);
+        this.state.gi = setInterval(function() { this.setActive() }.bind(this), 5000);
     }
 
     render(){
         const index = this.state.active;
         const level = index - 1;
-        // var self = this;
-        // const interval = setTimeout(function(){
-        //     console.log('set called');
-        //     {self.setActive()};
-        // }, 5000);
+
 
         return (
             <div id="container">
