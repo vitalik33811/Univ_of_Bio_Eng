@@ -1,0 +1,37 @@
+
+.app .container input.searchRed{
+    background-color: #EE3B3B;
+}
+.app .container input.searchBlue{
+    background-color: #2196F3;
+}
+
+.app .container ::-webkit-input-placeholder {
+    color: #212121;
+}
+.app .container ::-moz-input-placeholder {
+    color: #212121;
+}
+.app .container ::-ms-input-placeholder {
+    color: #212121;
+}
+.app .container ::-o-input-placeholder {
+    color: #212121;
+}
+.app .container ::input-placeholder {
+    color: #212121;
+}
+.app .container #search-button {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    top: 0;
+    right: 0;
+    outline: none;
+
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,53 @@
+.Dialog .div{
+    padding: 0 !important;
+    background-color: red;
+}
+
+.Tab{
+    /*background-color: red;*/
+    padding: 0 !important;
+}
+.VV{
+    flex-direction: column !important;
+}
+
+.ValidForm{
+    flex-direction: column;
+    /*justify-content: center !important;*/
+    text-align: center !important;
+}
+.ValidTextField{
+    display: block !important;
+    /*justify-content: center !important;*/
+    /*text-align: center !important;*/
+    margin: 0 auto;
+    width: 256px;
+    height: 72px;
+}
+
+.ValidBtn{
+    display: block !important;
+    /*display: block !important;*/
+    /*width: 70px;*/
+    margin: 0 auto!important;
+    text-align: center !important;
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+}
+
+.RegRow{
+    display: flex;
+    justify-content: center;
+
+}
+
+.myValidSelect{
+    top:30%;
+    display: block !important;
+    fwidth: 400px !important;
+}
+
+.myValid{
+    top:50%;
+    display: block !important;
+}

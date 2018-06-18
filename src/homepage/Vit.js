@@ -12,17 +12,66 @@ import School from 'material-ui/svg-icons/social/school';
 import Slider from './slider.js';
 import './home.css';
 import ss from '../images/1057.jpg'
-import appimg from '../images/appimg.jpg';
+import logo from '../images/logo.jpg';
 import AutoComplete from 'material-ui/AutoComplete';
 import Footer from './footer.js';
 import Navigation from './navigation.js'
 import Navigator from './Navigator'
 import { Switch, Route } from 'react-router'
 import Employees from './employees/employees.js'
+import Sea from './employees/search.js'
 
+import RaisedButton from 'material-ui/RaisedButton';
+import ActionAndroid from 'material-ui/svg-icons/action/lock-outline';
+import Dialog from 'material-ui/Dialog';
 
+import Form from './form';
 
+const styles = {
+    float: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width : '100%',
+        marginTop: 0,
+    },
+    fixed:{
+        position: 'relative',
+    },
+    mediumIcon: {
+        width: 30,
+        height: 30,
+    },
+    medium: {
+        width: 40,
+        height: 40,
+    },
+    logo1:{
+        top: '0%',
+    },
+    logo2:{
+        top: '-100%',
+    },
 
+    buttonS:{
+        backgroundColor: '#212121',
+        color: '#0091EA',
+    },
+    darkBack:{
+        backgroundColor: '#212121',
+        lineHeight: '35px',
+    },
+    InkColor:{
+        color: '#0091EA',
+    },
+    InvColor:{
+        color: '#EE3B3B',
+    },
+    icons:{
+        color: '#212121',
+        fontSize: '30px',
+    },
+};
 
 const style = {
     all:{
@@ -30,6 +79,8 @@ const style = {
         background: "White",
     },
     titleappbar:{
+        marginLeft: '7px',
+        lineHeight: '80px',
         color: "black",
         fontFamily: "Open Sans",
     },
@@ -41,23 +92,11 @@ const style = {
 };
 
 
-const Logged = (props) => (
-    <IconMenu
-        {...props}
-        iconButtonElement={
-            <IconButton><Menu/></IconButton>
-        }
-        targetOrigin={{horizontal: 'right', vertical: 'top'}}
-        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-    >
-        <MenuItem primaryText="Pisya" />
-        <MenuItem primaryText="Help" />
-        <MenuItem primaryText="Sosat" />
-        <MenuItem primaryText="neeeeeeeeeeeeeeew" />
-    </IconMenu>
-);
+// const Logged = (opened) => (
+//
+// );
 
-Logged.muiName = 'IconMenu';
+//Logged.muiName = 'IconMenu';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -65,8 +104,23 @@ class HomePage extends React.Component {
         this.state = {
             dataSource: [],
             logged: true,
+            RegistrationFormOpened: false,
+            floatingnode: null,
+            style: null,
+            flag: false,
+            mounted: false,
+            UserIsLogged: false,
         }
     }
+
+    handleOpen = () => {
+        console.log('ggjjj');
+        this.setState({RegistrationFormOpened: true});
+    };
+
+    handleClose = () => {
+        this.setState({RegistrationFormOpened: false});
+    };
 
     handleUpdateInput = (value) => {
         this.setState({
@@ -83,13 +137,41 @@ class HomePage extends React.Component {
         return(
            <div className="TotalHome">
 
-               <div className="AppBarCont"id="colorsid">
+               <div className="AppBarCont" id="colorsid">
 
                    <AppBar
-                       title="MySiteName"
+                       title="Институт Биологии"
                        // iconElementLeft={<IconButton><School color ="black" fill = "black" /></IconButton>}
-                       iconElementLeft={<img className="AppBarImg" src={appimg}/>}
-                       iconElementRight={<Logged/>}
+                       iconElementLeft={<img className="AppBarImg" src={logo}/>}
+                       iconElementRight={
+                           <div style = {{lineHeight: '70px'}}>
+
+                               <button className="canBtn" id="IconBtn" onClick={this.moveLeft}><i id="can" style={styles.icons} className="fas fa-search" aria-hidden="true"></i></button>
+
+                               <RaisedButton className = 'MainRegBtn'
+                                         backgroundColor = {'#212121'}
+                                         style={styles.darkBack}
+                                         label={'регистрация'}
+                                         labelPosition="before"
+                                         icon={<ActionAndroid />}
+                                         labelColor ={'#2196F3'}
+                                         onClick={this.handleOpen}  />
+                           <Dialog
+                               actionsContainerStyle = {styles.center}
+                               bodyStyle = {styles.content}
+                               className = "Dialog"
+                               //actions={actions}
+                               modal={false}
+                               open={this.state.RegistrationFormOpened}
+                               onRequestClose={this.handleClose}
+                               autoDetectWindowHeight={true}
+                           >
+
+                               <Form />
+
+                           </Dialog>
+                       </div>
+                       }
                        style = {style.all}
                        titleStyle={style.titleappbar}
                        iconStyleLeft={style.iconleft}

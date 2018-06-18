@@ -6,9 +6,11 @@
     "material-ui": "^0.20.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-form-validator-core": "^0.4.4",
+    "react-material-ui-form-validator": "^1.1.4",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^1.1.4",
     "react-swipeable-views": "^0.12.13"
   },
   "scripts": {

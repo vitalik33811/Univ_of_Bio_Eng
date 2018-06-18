@@ -21,14 +21,19 @@ const styles = {
         marginRight:'10%',
         // width:'25%',
     },
+    swipe:{
+        height:'100%',
+    },
     root: {
         display: 'flex',
         justifyContent: 'space-around',
         width:'100%',
-
+        marginTop: '3%',
     },
     gridList: {
-        width: '70%',
+        marginRight: '3%',
+        marginLeft: '3%',
+        width: '90%',
         height: '100%',
         overflowY: 'auto',
 
@@ -85,52 +90,64 @@ const consts = {
 
 const tilesData = [
     {
-        img: i1,
+        img: 'https://sante.by/upload/iblock/8c9/1.jpg',
         title: 'Breakfast',
         author: 'jill111',
         cat: 1
     },
     {
-        img: i2,
+        img: 'https://sante.by/upload/iblock/6e5/1.jpg',
         title: 'Tasty burger',
         author: 'pashminu',
-        cat: 1
+        cat: 5
     },
     {
-        img: 'images/grid-list/camera-813814_640.jpg',
+        img: 'https://sante.by/upload/iblock/bea/3.jpg',
         title: 'Camera',
         author: 'Danson67',
         cat: 2
     },
     {
-        img: 'images/grid-list/morning-819362_640.jpg',
+        img: 'https://sante.by/upload/iblock/2c3/2c31f72e397f5031792a9016078d3cc4.jpg',
         title: 'Morning',
         author: 'fancycrave1',
         cat: 2
     },
     {
-        img: 'images/grid-list/hats-829509_640.jpg',
+        img: 'https://sante.by/upload/iblock/161/2.jpg',
         title: 'Hats',
         author: 'Hans',
         cat: 3
     },
     {
-        img: 'images/grid-list/honey-823614_640.jpg',
+        img: 'https://sante.by/upload/iblock/eaa/%D0%BA%D0%BB%D0%B8%D0%BC%D0%BA%D0%BE%D0%B2%D0%B8%D1%87.jpg',
         title: 'Honey',
         author: 'fancycravel',
+        cat: 4
+    },
+    {
+        img: 'https://sante.by/upload/iblock/741/7410d51ed278909afa20bdaba3e791cd.jpg',
+        title: 'Vegetables',
+        author: 'jill111',
         cat: 3
     },
     {
-        img: 'images/grid-list/vegetables-790022_640.jpg',
-        title: 'Vegetables',
-        author: 'jill111',
-        cat: 4
-    },
-    {
-        img: 'images/grid-list/water-plant-821293_640.jpg',
+        img: 'https://sante.by/upload/iblock/632/63245477ee399a1274d8376967d02b46.jpg',
         title: 'Water plant',
         author: 'BkrmadtyaKarki',
         cat: 4
+    },
+    {
+        img: 'https://sante.by/upload/iblock/388/22.jpg',
+        title: 'Water plant',
+        author: 'BkrmadtyaKarki',
+        cat: 6
+    },
+    {
+        img: 'https://sante.by/upload/iblock/bf1/bf17f1266f07b683e6379a3beb936ba3.jpg',
+        title: 'Water plant',
+        author: 'BkrmadtyaKarki',
+        cat: 1
     },
 ];
 
@@ -152,15 +169,16 @@ class emp extends Component {
     }
 
     Ggroup(val = 0){
-
+        const spis = [];
+        tilesData.forEach(g=>{ if (g.cat == val || val == 0){spis.push(g);}})
         return(
             <GridList
                 cellHeight={180}
                 style={styles.gridList}
                 cols={4}
             >
-                {tilesData.map(vrach => {
-                    if (vrach.cat == val || val == 0){
+
+                {spis.map(vrach => {
                         return(
                             <GridTile
                                 style={styles.position}
@@ -171,8 +189,6 @@ class emp extends Component {
                             >
                                 <img src={vrach.img}/>
                             </GridTile>)
-                    };
-                    return (<div></div>);
                 })}
             </GridList>
         );
@@ -217,11 +233,13 @@ class emp extends Component {
 
 
                 <SwipeableViews
+                    style={styles.swipe}
                     index={this.state.cat}
+                    data-swipeable = "false"
                 >
                     {consts.cats.map((c,i)=>{
                         return(
-                            <div key = {i}>
+                            <div  style={styles.swipe} key = {i}>
                                 {this.Ggroup(i)}
                             </div>
                         )

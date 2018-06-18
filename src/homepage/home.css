@@ -18,11 +18,20 @@
     fill: black!important;
 }
 .AppBarImg{
-    max-height: 80px;
+    max-height: 78px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     max-width: 100px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 .Sliderconteiner{
     overflow: hidden;
     height: 400px;
+}
+.canBtn{
+    /*font-size: 32px;*/
+    margin-right:3%;
+}
+.searchBtn{
+    margin-right:5%;
 }
