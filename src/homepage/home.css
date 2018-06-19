@@ -5,7 +5,7 @@
 
 }
 .TotalHome{
-    background-color: lightgrey;
+    background-color: #E3F2FD;
 }
 #colorsid
 {
@@ -24,6 +24,7 @@
     max-width: 100px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
+
 .Sliderconteiner{
     overflow: hidden;
     height: 400px;
@@ -34,4 +35,12 @@
 }
 .searchBtn{
     margin-right:5%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400i");
+
+h1{
+    font-size: 30px!important;
+    font-family: 'Fira Sans Condensed', sans-serif!important;
+    color:forestgreen!important;
 }

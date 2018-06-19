@@ -19,6 +19,9 @@ import Navigation from './navigation.js'
 import Navigator from './Navigator'
 import { Switch, Route } from 'react-router'
 import Employees from './employees/employees.js'
+import Services from './services/serv.js'
+import Center from './center/center'
+import Cont from './contacts/contacts'
 import Sea from './employees/search.js'
 
 import RaisedButton from 'material-ui/RaisedButton';
@@ -146,7 +149,6 @@ class HomePage extends React.Component {
                        iconElementRight={
                            <div style = {{lineHeight: '70px'}}>
 
-                               <button className="canBtn" id="IconBtn" onClick={this.moveLeft}><i id="can" style={styles.icons} className="fas fa-search" aria-hidden="true"></i></button>
 
                                <RaisedButton className = 'MainRegBtn'
                                          backgroundColor = {'#212121'}
@@ -202,12 +204,12 @@ class HomePage extends React.Component {
                <Switch>
                    <Route exact path='/' component={Card}/>
                    <Route path='/employees' component={Employees}/>
-                   <Route path='/page2' render={() => <div>govno2</div>}/>
+                   <Route path='/services' component={Services}/>
+                   <Route path='/center' component={Center}/>
+                   <Route path='/contacts' component={Cont}/>
                </Switch>
 
                   <div className="AutoCompletecontainer">
-
-
 
 
                       < div className="footerconteiner">
@@ -215,14 +217,9 @@ class HomePage extends React.Component {
 
                       <Footer/>
 
-
-
                       </div>
 
-
-
                   </div>
-
 
            </div>
 

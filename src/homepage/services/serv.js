@@ -1,4 +1,7 @@
 /**
+ * Created by Alex on 19.06.2018.
+ */
+/**
  * Created by vital on 02.06.2018.
  */
 import React, { Component } from 'react';
@@ -22,9 +25,6 @@ const styles = {
         // width:'25%',
     },
     swipe:{
-        height:'1100px',
-    },
-    swipe:{
         height:'100%',
     },
     root: {
@@ -32,13 +32,12 @@ const styles = {
         justifyContent: 'space-around',
         width:'100%',
         marginTop: '3%',
-        height:'100%'
     },
     gridList: {
         marginRight: '3%',
         marginLeft: '3%',
         width: '90%',
-        height: '1100px',
+        height: '100%',
         overflowY: 'auto',
 
     },
@@ -89,7 +88,7 @@ const selitemstyle = {
 };
 
 const consts = {
-    cats: ['Все','Зубы','Письки','Жопки','Глаз','Шоколадный Глаз','Клетки']
+    cats: ['Лечения язв','Выделение клеток','Лечение периодонта','Лечение ожогов','Глаз','Шоколадный Глаз','Клетки']
 };
 
 const tilesData = [
@@ -155,11 +154,8 @@ const tilesData = [
     },
 ];
 
-/**
- * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
- */
 
-class emp extends Component {
+class ser extends Component {
 
     constructor(props) {
         super(props);
@@ -177,23 +173,22 @@ class emp extends Component {
         tilesData.forEach(g=>{ if (g.cat == val || val == 0){spis.push(g);}})
         return(
             <GridList
-                cellHeight={250}
+                cellHeight={180}
                 style={styles.gridList}
-                cols={3}
-                padding ={10}
+                cols={4}
             >
 
                 {spis.map(vrach => {
-                        return(
-                            <GridTile
-                                style={styles.position}
-                                key={vrach.img}
-                                title={vrach.title}
-                                subtitle={<span>by <b>{vrach.author}</b></span>}
-                                actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
-                            >
-                                <img src={vrach.img}/>
-                            </GridTile>)
+                    return(
+                        <GridTile
+                            style={styles.position}
+                            key={vrach.img}
+                            title={vrach.title}
+                            subtitle={<span>by <b>{vrach.author}</b></span>}
+                            actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
+                        >
+                            <img src={vrach.img}/>
+                        </GridTile>)
                 })}
             </GridList>
         );
@@ -206,56 +201,53 @@ class emp extends Component {
     render() {
 
         return(
-            <div className="empAll" style = {{height:'1200px',display:'flex'}}>
+            <div className="empAll" style = {{height:'800px',display:'flex'}}>
 
-            <div className="catcolumn" style = {{width:'20%',display:'flex'}}>
-                <div className = "catmenu" style={{width:'100%',marginTop:'3%'}}>
-                    <Paper  style={style} >
-                        <Menu selected = {0} menuItemStyle = {itemstyle} selectedMenuItemStyle = {selitemstyle} onChange = {this.handleCat} value = {this.state.cat}>
-                            {consts.cats.map((value,index)=> {
-                                    const nm = value.toLocaleLowerCase();
-                                    const ind = index;
-                                    return (
-                                        <MenuItem
-                                            //selectedMenuItemStyle = {1}
-                                            primaryText={nm}
-                                            value = {ind}
-                                            key={ind}
-                                            //selected = {1}
-                                            //onClick={event => this.handleMenuItemClick(event, index)}
-                                        />
-                                    );
+                <div className="catcolumn" style = {{width:'20%',display:'flex'}}>
+                    <div className = "catmenu" style={{width:'100%',marginTop:'3%'}}>
+                        <Paper  style={style} >
+                            <Menu selected = {0} menuItemStyle = {itemstyle} selectedMenuItemStyle = {selitemstyle} onChange = {this.handleCat} value = {this.state.cat}>
+                                {consts.cats.map((value,index)=> {
+                                        const nm = value.toLocaleLowerCase();
+                                        const ind = index;
+                                        return (
+                                            <MenuItem
+                                                //selectedMenuItemStyle = {1}
+                                                primaryText={nm}
+                                                value = {ind}
+                                                key={ind}
+                                                //selected = {1}
+                                                //onClick={event => this.handleMenuItemClick(event, index)}
+                                            />
+                                        );
+                                    }
+                                )
                                 }
-                            )
-                            }
-                        </Menu>
-                    </Paper>
+                            </Menu>
+                        </Paper>
+                    </div>
                 </div>
-            </div>
 
 
-            <div style={styles.root}>
+                <div style={styles.root}>
 
 
-                <SwipeableViews
-                    style={styles.swipe}
-                    index={this.state.cat}
-                    data-swipeable = "false"
-                >
-                    {consts.cats.map((c,i)=>{
-                        return(
-                            <div  style={styles.swipe2} key = {i}>
-                                {this.Ggroup(i)}
-                            </div>
-                        )
-                    })}
+                    <SwipeableViews
+                        style={styles.swipe}
+                        index={this.state.cat}
+                        data-swipeable = "false"
+                    >
+                        {consts.cats.map((c,i)=>{
+                            return(
+                                <div  style={styles.swipe} key = {i}>
+                                    {this.Ggroup(i)}
+                                </div>
+                            )
+                        })}
 
-                </SwipeableViews>
+                    </SwipeableViews>
 
-
-
-
-            </div>
+                </div>
             </div>
 
 
@@ -263,7 +255,4 @@ class emp extends Component {
         );
     }
 }
-
-
-
-export default emp;
+export default ser;

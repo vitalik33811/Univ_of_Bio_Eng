@@ -1,4 +1,4 @@
 
-export const consts=['Услуги','О центре','Специалисты','Контактыы','Главная'];
+export const consts=['Услуги','Главная','Специалисты','Контактыы','О центре'];
 
-export const routes = ['/','/page1','/employees','/1','/2'];
+export const routes = ['/services','/','/employees','/contacts','/center'];
